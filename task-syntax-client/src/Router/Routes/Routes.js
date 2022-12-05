@@ -9,6 +9,8 @@ import DashboardLayout from './../../layouts/DashboardLayout';
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import AdminRoute from './../AdminRoute/AdminRoute';
 import UploadPost from "../../Pages/UploadPost/UploadPost";
+import Error from "../../Pages/Error/Error";
+
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp />,
+      },
+      {
+        path: "*",
+        element: <Error />,
       } 
     ],
   },
