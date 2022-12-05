@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Home = () => {
+const LogIn = () => {
     return (
         <div className='lg:px-52 bg-base-200'>
-            Home
+            Login
         </div>
     );
 };
 
-export default Home;
+export default LogIn;
