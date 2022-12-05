@@ -14,11 +14,11 @@ const Header = () => {
   const handleLogOut = () => {
     logOutUser()
       .then(() => {
-        toast("You have logged out");
+        toast.success("You have logged out");
         navigate("/login", { state: { from } });
       })
       .catch((error) => {
-        toast(error.message);
+        toast.error(error.message);
       });
   };
 

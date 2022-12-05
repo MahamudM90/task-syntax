@@ -32,11 +32,11 @@ const LogIn = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        toast("You have been logged in");
+        toast.success("You have been logged in");
         setLoginUserEmail(data.email);
       })
       .catch((error) => {
-        toast(error.message);
+        toast.error(error.message);
         setSignUpError(error.message);
       });
 

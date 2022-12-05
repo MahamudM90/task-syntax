@@ -55,19 +55,6 @@ async function run() {
             next();
         }
 
-        // NOTE: make sure you use verifySeller after verifyJWT
-        const verifySeller = async (req, res, next) => {
-            const decodedEmail = req.decoded.email;
-            const query = { email: decodedEmail };
-            const user = await userCollection.findOne(query);
-
-            if (user?.role !== 'seller') {
-                return res.status(403).send({ message: 'forbidden access' })
-            }
-            next();
-        }
-
-
         //jwt token
         app.get('/jwt', async (req, res) => {
             const email = req.query.email;
