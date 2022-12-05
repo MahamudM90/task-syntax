@@ -23,16 +23,7 @@ const DashboardLayout = () => {
                     <ul className="menu p-4 w-80 text-base-content">
                         {
                             isAdmin && <>
-                                <li><Link to="/dashboard/allusers" className='font-bold'>All users</Link></li>
-                                <li><Link to="/dashboard/allsellers" className='font-bold'>All Sellers</Link></li>
-                                <li><Link to="/dashboard/allbuyers" className='font-bold'>All Buyers</Link></li>
-                            </>
-                        }   
-                        {
-                            <>
-                                <li><Link to="/dashboard/myproducts" className='font-bold'>My Products</Link></li>
-                                <li><Link to="/dashboard/addproduct" className='font-bold'>Add A Product</Link></li>
-                                <li><Link to="/dashboard/mybuyers" className='font-bold'>My Buyers</Link></li>
+                                <li><Link to="/dashboard/upload-post" className='font-bold'>Upload a Blog Post</Link></li>
                             </>
                         }
                     </ul>

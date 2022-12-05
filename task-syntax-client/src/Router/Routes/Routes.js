@@ -8,6 +8,7 @@ import PrivateRoute from './../PrivateRoute/PrivateRoute';
 import DashboardLayout from './../../layouts/DashboardLayout';
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import AdminRoute from './../AdminRoute/AdminRoute';
+import UploadPost from "../../Pages/UploadPost/UploadPost";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp />,
-      }
+      } 
     ],
   },
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <AdminRoute><Dashboard></Dashboard></AdminRoute>,
+      },
+      {
+        path: "/upload-post",
+        element: <AdminRoute><UploadPost></UploadPost></AdminRoute>,
       }
 
     ]

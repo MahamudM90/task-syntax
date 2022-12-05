@@ -3,11 +3,15 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../../Assets/logo/logo.png";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import toast from "react-hot-toast";
+import useAdmin from "../../../hooks/useAdmin";
 
 const Header = () => {
   const { user, logOutUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+
+  const [isAdmin] = useAdmin(user?.email);
+  console.log(isAdmin);
 
   const from = location.state?.form?.pathname || "/";
 
@@ -75,12 +79,24 @@ const Header = () => {
         {
           // If user is logged in, show logout button
           user ? (
-            <button
-              onClick={handleLogOut}
-              className="btn btn-primary"
-            >
-              Log Out
-            </button>
+            <>
+              {isAdmin && (
+                <>
+                  <Link
+                    to="/dashboard"
+                    className="btn btn-primary btn-outline mr-2"
+                  >
+                    Admin Dashboard
+                  </Link>
+                </>
+              )}{" "}
+              :{" "}
+              {
+                <button onClick={handleLogOut} className="btn btn-primary">
+                  Log Out
+                </button>
+              }
+            </>
           ) : (
             <Link to="/login" className="btn btn-primary">
               Login
