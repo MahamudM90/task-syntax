@@ -44,7 +44,7 @@ const router = createBrowserRouter([
         element: <AdminRoute><Dashboard></Dashboard></AdminRoute>,
       },
       {
-        path: "/upload-post",
+        path: "/dashboard/upload-post",
         element: <AdminRoute><UploadPost></UploadPost></AdminRoute>,
       }
 
