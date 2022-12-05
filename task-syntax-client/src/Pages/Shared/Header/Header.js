@@ -1,8 +1,26 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../../Assets/logo/logo.png";
+import { AuthContext } from "../../../contexts/AuthProvider";
+import toast from "react-hot-toast";
 
 const Header = () => {
+  const { user, logOutUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.form?.pathname || "/";
+
+  const handleLogOut = () => {
+    logOutUser()
+      .then(() => {
+        toast("You have logged out");
+        navigate("/login", { state: { from } });
+      })
+      .catch((error) => {
+        toast(error.message);
+      });
+  };
 
   return (
     <div className="navbar bg-base-100 lg:px-52">
@@ -54,12 +72,21 @@ const Header = () => {
         </svg>
       </label>
       <div className="navbar-end">
-        <Link
-            to="/login"
-            className="btn btn-primary"
-          >
-            Login
-          </Link>
+        {
+          // If user is logged in, show logout button
+          user ? (
+            <button
+              onClick={handleLogOut}
+              className="btn btn-primary"
+            >
+              Log Out
+            </button>
+          ) : (
+            <Link to="/login" className="btn btn-primary">
+              Login
+            </Link>
+          )
+        }
       </div>
     </div>
   );
