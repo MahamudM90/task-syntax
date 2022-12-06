@@ -90,7 +90,7 @@ const Header = () => {
                   </Link>
                 </>
               )}{" "}
-              :{" "}
+              {" "}
               {
                 <button onClick={handleLogOut} className="btn btn-primary">
                   Log Out

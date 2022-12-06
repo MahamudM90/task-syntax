@@ -34,6 +34,7 @@ const LogIn = () => {
         console.log(user);
         toast.success("You have been logged in");
         setLoginUserEmail(data.email);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         toast.error(error.message);

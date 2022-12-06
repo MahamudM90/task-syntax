@@ -23,7 +23,7 @@ const DashboardLayout = () => {
                     <ul className="menu p-4 w-80 text-base-content">
                         {
                             isAdmin && <>
-                                <li><Link to="/dashboard/upload-post" className='font-bold'>Upload a Blog Post</Link></li>
+                                <li><Link to="/dashboard" className='font-bold'>Upload a Blog Post</Link></li>
                             </>
                         }
                     </ul>

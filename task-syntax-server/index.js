@@ -41,6 +41,9 @@ async function run() {
         // user db and collection
         const userDB = client.db('syntax-userDB');
         const userCollection = userDB.collection('userCollection');
+        // post db and collection
+        const postDB = client.db('syntax-postDB');
+        const postCollection = postDB.collection('postCollection');
 
 
          // NOTE: make sure you use verifyAdmin after verifyJWT
@@ -65,6 +68,21 @@ async function run() {
                 return res.send({ accessToken: token });
             }
             res.status(403).send({ accessToken: '' })
+        });
+
+
+        //upload a blog
+        app.post('/blog', async (req, res) => {
+            const blog = req.body;
+            const result = await postCollection.insertOne(blog);
+            res.send(result);
+        });
+
+        //get all blogs
+        app.get('/blog', async (req, res) => {
+            const query = {};
+            const blogs = await postCollection.find(query).toArray();
+            res.send(blogs);
         });
 
         app.get('/users', async (req, res) => {
