@@ -30,6 +30,7 @@ const SignUp = () => {
         const user = result.user;
         console.log(user);
         toast.success("Your account has been created");
+        navigate("/login");
         const userInfo = {
           displayName: data.name,
         };
