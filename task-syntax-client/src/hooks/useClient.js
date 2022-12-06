@@ -5,7 +5,7 @@ const useClient = email => {
     const [isClientLoading, setIsClientLoading] = useState(true);
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/users/client/${email}`)
+            fetch(`https://task-syntax.vercel.app/users/client/${email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);

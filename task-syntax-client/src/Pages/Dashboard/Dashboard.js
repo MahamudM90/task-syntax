@@ -18,7 +18,7 @@ const Dashboard = () => {
         console.log(data);
 
 
-        fetch("http://localhost:5000/blog", {
+        fetch("https://task-syntax.vercel.app/blog", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
