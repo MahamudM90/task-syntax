@@ -1,9 +1,11 @@
 # Task Syntax ![GitHub last commit](https://img.shields.io/github/last-commit/mahamudm90/task-syntax?color=blue&label=Task%20Syntax%20Project%20Last%20Commit&logo=github&logoColor=blue&style=social)
 
 
-### Admin Email & Pass
-Email: `mahamud@gmail.com` <br>
-Pass: `Mahamud123456@`
+### Summary
+Dietify is an online marketplace to buy healthy and nutrion-rich products built using React, Express & MongoDB.
+Users can search, sort, filter products. It includes cart, wishlist & checkout features with payment integration.
+Built UI using my component library Mind UI involving 14 components & full-stack authentication provided by JWT.
+Integrated Razorpay Checkout for making payment of the ordered products.
 
 ## Live Deployed Link  
 [CLient Side Link](https://task-syntax.web.app) <br>
